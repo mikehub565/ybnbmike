@@ -1,0 +1,8 @@
+name = "ynbmike-contact-worker"
+main = "index.js"
+compatibility_date = "2026-03-07"
+
+# Use Wrangler to deploy. Keep secrets out of source; set with:
+# wrangler secret put SENDGRID_API_KEY
+# wrangler secret put FROM_EMAIL
+# wrangler secret put TO_EMAIL

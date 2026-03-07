@@ -194,15 +194,15 @@
                 </div>
                 <a href="my cv..pdf" download class="btn btn2">Download CV</a>
             </div>
-            <div class="contact-right">
-                <form name="submit-to-google-sheet">
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2">Submit</button>
-                </form>
-                <span id="msg"></span>
-            </div>
+                    <div class="contact-right">
+                        <form name="submit-to-google-sheet">
+                            <input type="text" name="Name" placeholder="Your Name" required>
+                            <input type="email" name="Email" placeholder="Your Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn btn2">Submit</button>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
         </div>
     </div>
     <div class="copyright">
@@ -243,22 +243,59 @@
 
 </script>
 <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbx7XVsOTVtMiYDpRIN_te4lhY2goWBptvXnBRr9Can_6I2-hAsce9UJ7SCp81sCmunMuw/exec' // add your own app script link here
+    // Contact form: try Cloudflare Worker endpoint first; fallback to Formspree if configured.
+    const workerUrl = 'https://YOUR_WORKER_SUBDOMAIN.workers.dev/'; // replace after deploy
+    const formspreeUrl = 'https://formspree.io/f/YOUR_FORM_ID'; // replace with your Formspree form endpoint
+
     const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
-  
-    form.addEventListener('submit', e => {
-      e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-            msg.innerHTML = "Message sent successfully"
-            setTimeout(function(){
-                msg.innerHTML = ""
-            },5000)
-            form.reset()
+    const msg = document.getElementById('msg')
+
+    async function postJson(url, data) {
+        const res = await fetch(url, {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify(data)
         })
-        .catch(error => console.error('Error!', error.message))
+        return res
+    }
+
+    form.addEventListener('submit', async e => {
+        e.preventDefault()
+        msg.textContent = 'Sending…'
+        const data = { Name: form.Name.value, Email: form.Email.value, Message: form.Message.value }
+        try {
+            // Try worker
+            let r = await postJson(workerUrl, data)
+            if (r.ok) {
+                const j = await r.json().catch(()=>({status:'success'}))
+                if (j.status === 'success') {
+                    msg.textContent = 'Message sent successfully'
+                    form.reset()
+                    setTimeout(()=> msg.textContent = '', 5000)
+                    return
+                }
+            }
+
+            // Worker failed or not configured — try Formspree (fallback)
+            if (formspreeUrl && formspreeUrl.includes('formspree.io')) {
+                const r2 = await fetch(formspreeUrl, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+                const j2 = await r2.json().catch(()=>({ok:false}))
+                if (r2.ok) {
+                    msg.textContent = 'Message sent successfully (via fallback)'
+                    form.reset()
+                    setTimeout(()=> msg.textContent = '', 5000)
+                    return
+                }
+            }
+
+            // Last resort: show mailto for manual send
+            msg.innerHTML = 'Delivery failed — please email <a href="mailto:chegemichael974@gmail.com">chegemichael974@gmail.com</a>'
+        } catch (err) {
+            console.error(err)
+            msg.textContent = 'Network error — try again later'
+        }
+        setTimeout(()=> msg.textContent = '', 10000)
     })
-  </script>
+</script>
 </body>
 </html>
