@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YBNBMIKE - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Preconnect and load Poppins font for better CLS and performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Favicons and touch icon (generated from your uploaded photo) -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" href="/favicon-32x32.png">
     <meta name="theme-color" content="#ff004f">
-    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <!-- defer Font Awesome to avoid blocking render -->
+    <script defer src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
         <!-- SEO: meta description, canonical, Open Graph, Twitter Card, JSON-LD -->
         <meta name="description" content="Michael (YBNBMIKE) — Website developer from Kenya. I build responsive websites, UI/UX designs and web apps. Contact: chegemichael974@gmail.com">
         <link rel="canonical" href="https://ynbmike.me/">
@@ -63,11 +68,11 @@
     <div class="container">
         <div class="row">
             <div class="about-col-1">
-                <img src="WhatsApp Image 2025-01-06 at 17.34.14_d49c606e.jpg" alt="Michael portrait">
+                <img src="portrait_800.jpg" srcset="portrait_400.jpg 400w, portrait_800.jpg 800w, portrait_1200.jpg 1200w" sizes="(max-width:600px) 100vw, 400px" loading="lazy" alt="Michael portrait">
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
-                <p>My name is YBNBMIKE a computer science student at MountKenya University,Thika.</p>
+                <p>My name is Michael Mwangi a computer science student at MountKenya University,Thika.</p>
 
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -132,7 +137,7 @@
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
             <div class="work">
-                <img src="portfolio3.jpg" alt="Rental management system screenshot">
+                <img src="portfolio3_800.jpg" srcset="portfolio3_400.jpg 400w, portfolio3_800.jpg 800w, portfolio3_1200.jpg 1200w" sizes="(max-width:600px) 100vw, 400px" loading="lazy" alt="Rental management system screenshot">
                 <div class="layer">
                     <h3>Rental management system</h3>
                     <p>The website offers a centralized platform for landlords and tenants to communicate efficiently.</p>
@@ -140,7 +145,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="portfolio4.jpg" alt="Parking system screenshot">
+                <img src="portfolio4_800.jpg" srcset="portfolio4_400.jpg 400w, portfolio4_800.jpg 800w, portfolio4_1200.jpg 1200w" sizes="(max-width:600px) 100vw, 400px" loading="lazy" alt="Parking system screenshot">
                 <div class="layer">
                     <h3>Parking system</h3>
                     <p>The website Maximizes the use of parking areas, even in limited spaces, by organizing vehicle placement. .</p>
@@ -148,7 +153,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="portfolio5.jpg" alt="Room management system screenshot">
+                <img src="portfolio5_800.jpg" srcset="portfolio5_400.jpg 400w, portfolio5_800.jpg 800w, portfolio5_1200.jpg 1200w" sizes="(max-width:600px) 100vw, 400px" loading="lazy" alt="Room management system screenshot">
                 <div class="layer">
                     <h3>Room management system</h3>
                     <p>The websites Streamlines property management by consolidating tenant information, payment records, and maintenance requests.</p>
