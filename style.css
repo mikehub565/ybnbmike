@@ -114,53 +114,6 @@ nav ul li a.active-nav-link::after {
     transform: scaleX(1);
 }
 
-/* Menu controls (hidden on desktop) */
-.menu-toggle,
-.menu-close {
-    display: none;
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    background: #161616;
-    color: #fff;
-    font-family: inherit;
-    line-height: 1;
-}
-
-.menu-toggle {
-    display: none;
-    width: 42px;
-    height: 42px;
-    cursor: pointer;
-    border-radius: 10px;
-    transition: background 0.3s, border-color 0.3s;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.menu-toggle:hover {
-    background: #1f1f1f;
-    border-color: rgba(255, 0, 79, 0.45);
-}
-
-.menu-toggle span {
-    display: block;
-    width: 18px;
-    height: 2px;
-    border-radius: 999px;
-    background: #fff;
-}
-
-/* Close control inside side menu */
-.menu-close {
-    width: 38px;
-    height: 38px;
-    font-size: 20px;
-    cursor: pointer;
-    color: #c6c6c6;
-    border-radius: 8px;
-}
-
 /* ===== HEADER / HERO ===== */
 #header {
     width: 100%;
@@ -707,57 +660,45 @@ form .btn2 {
     /* Nav */
     nav {
         width: calc(100% - 40px);
-    }
-
-    .menu-toggle {
-        display: inline-flex;
+        padding: 10px 0;
     }
 
     nav ul {
-        position: fixed;
-        top: 0;
-        right: -340px;
-        width: 280px;
-        height: 100vh;
-        background: #111;
-        flex-direction: column;
-        padding: 72px 32px 40px;
-        gap: 0;
-        z-index: 100;
-        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
-        border-left: 1px solid rgba(255, 255, 255, 0.06);
+        position: static;
+        width: 100%;
+        height: auto;
+        background: transparent;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        gap: 4px;
+        box-shadow: none;
+        border-left: none;
     }
 
     nav ul li {
         list-style: none;
+        flex: 1;
     }
 
     nav ul li a {
         display: block;
-        font-size: 17px;
-        padding: 14px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        border-radius: 0;
+        font-size: 13px;
+        text-align: center;
+        padding: 8px 6px;
+        border-bottom: none;
+        border-radius: 8px;
     }
 
     nav ul li a:hover {
-        background: none;
-        color: #ff004f;
-    }
-
-    .menu-close {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 24px;
-        right: 24px;
+        background: rgba(255, 0, 79, 0.1);
+        color: #fff;
     }
 
     /* Hero */
     #header > .container {
-        padding-top: 58px;
+        padding-top: 64px;
     }
 
     .header-text {
