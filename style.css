@@ -488,7 +488,8 @@ nav ul li a.active-nav-link::after {
     aspect-ratio: 1 / 1;
     object-fit: contain;
     background: #ffffff;
-    padding: 18px;
+    padding: 8px;
+    object-position: center;
 }
 
 .work:hover img {
