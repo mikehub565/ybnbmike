@@ -48,7 +48,6 @@
 <div id="header">
     <div class="container">
         <nav>
-            <img src="logo.png" class="logo" alt="YBNBMIKE logo">
             <ul id="sidemenu">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -205,9 +204,6 @@
                 </div>
         </div>
     </div>
-    <div class="copyright">
-        <p>Copyright © YBNBMIKE</p>
-    </div>
 </div>
 
 
@@ -241,6 +237,64 @@
         sidemeu.style.right = "-280px";
     }
 
+</script>
+<script>
+    const navLinks = document.querySelectorAll('nav ul li a[href^="#"]');
+    const sections = Array.from(navLinks)
+        .map(link => document.querySelector(link.getAttribute('href')))
+        .filter(Boolean);
+
+    function updateActiveNavLink() {
+        const scrollPosition = window.scrollY + 120;
+        let currentSectionId = 'header';
+
+        sections.forEach(section => {
+            if (scrollPosition >= section.offsetTop) {
+                currentSectionId = section.id;
+            }
+        });
+
+        navLinks.forEach(link => {
+            const isActive = link.getAttribute('href') === `#${currentSectionId}`;
+            link.classList.toggle('active-nav-link', isActive);
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+    window.addEventListener('load', updateActiveNavLink);
+</script>
+<script>
+    const revealTargets = [
+        '#about .sub-title', '#about .about-col-1', '#about .about-col-2',
+        '#services .sub-title', '#services .services-list > div',
+        '#portfolio .sub-title', '#portfolio .work-list .work', '#portfolio .btn',
+        '#contact .sub-title', '#contact .contact-left', '#contact .contact-right'
+    ];
+
+    const revealElements = revealTargets.flatMap(selector => Array.from(document.querySelectorAll(selector)));
+
+    if (revealElements.length > 0) {
+        document.body.classList.add('motion-ready');
+
+        revealElements.forEach((element, index) => {
+            element.classList.add('animate-on-scroll');
+            element.classList.add(`delay-${(index % 3) + 1}`);
+        });
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.14,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        revealElements.forEach(element => revealObserver.observe(element));
+    }
 </script>
 <script>
     // Contact form: try Cloudflare Worker endpoint first; fallback to Formspree if configured.
