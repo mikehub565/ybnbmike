@@ -114,24 +114,36 @@ nav ul li a.active-nav-link::after {
     transform: scaleX(1);
 }
 
-/* Hamburger icon (hidden on desktop) */
-nav > .fas {
+/* Menu controls (hidden on desktop) */
+.menu-toggle,
+.menu-close {
+    display: none;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-family: inherit;
+    line-height: 1;
+}
+
+.menu-toggle {
     display: none;
     font-size: 22px;
-    color: #fff;
     cursor: pointer;
     padding: 8px;
     border-radius: 6px;
     transition: background 0.3s;
 }
 
-nav > .fas:hover {
+.menu-toggle:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Close icon inside side menu */
-nav ul .fas {
-    display: none;
+/* Close control inside side menu */
+.menu-close {
+    font-size: 22px;
+    cursor: pointer;
+    padding: 4px;
+    color: #888;
 }
 
 /* ===== HEADER / HERO ===== */
@@ -715,7 +727,7 @@ form .btn2 {
         width: calc(100% - 40px);
     }
 
-    nav > .fas {
+    .menu-toggle {
         display: block;
     }
 
@@ -752,18 +764,22 @@ form .btn2 {
         color: #ff004f;
     }
 
-    nav ul .fas {
+    .menu-close {
         display: block;
         position: absolute;
         top: 24px;
         right: 24px;
-        font-size: 22px;
-        cursor: pointer;
-        color: #888;
-        padding: 4px;
     }
 
     /* Hero */
+    #header > .container {
+        padding-top: 58px;
+    }
+
+    .header-text {
+        padding: 16px 0 14px;
+    }
+
     .header-text h1 {
         font-size: clamp(28px, 8vw, 40px);
     }
