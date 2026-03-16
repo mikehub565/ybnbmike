@@ -38,6 +38,8 @@ section,
 #portfolio,
 #contact {
     scroll-margin-top: 100px;
+    content-visibility: auto;
+    contain-intrinsic-size: 900px;
 }
 
 a {
@@ -184,7 +186,6 @@ nav ul li a.active-nav-link::after {
     opacity: 0;
     transform: translateY(40px) scale(0.985);
     transition: opacity 0.55s ease, transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform, opacity;
 }
 
 .motion-ready .animate-on-scroll.reveal {

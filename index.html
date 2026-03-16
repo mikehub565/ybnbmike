@@ -9,6 +9,7 @@
     <!-- Preconnect and load Poppins font for better CLS and performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Favicons and touch icon (generated from your uploaded photo) -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -201,14 +202,14 @@
 
 <script>
 
-    var tablinks = document.getElementsByClassName("tab-links");
-    var tabcontents = document.getElementsByClassName("tab-contents");
+    const tablinks = document.getElementsByClassName("tab-links");
+    const tabcontents = document.getElementsByClassName("tab-contents");
 
     function opentab(evt, tabname){
-        for(tablink of tablinks){
+        for (const tablink of tablinks){
             tablink.classList.remove("active-link");
         }
-        for(tabcontent of tabcontents){
+        for (const tabcontent of tabcontents){
             tabcontent.classList.remove("active-tab");
         }
         evt.currentTarget.classList.add("active-link");
@@ -218,12 +219,11 @@
 </script>
 
 <script>
-</script>
-<script>
     const navLinks = document.querySelectorAll('nav ul li a[href^="#"]');
     const sections = Array.from(navLinks)
         .map(link => document.querySelector(link.getAttribute('href')))
         .filter(Boolean);
+    let navTicking = false;
 
     function updateActiveNavLink() {
         const scrollPosition = window.scrollY + 120;
@@ -241,14 +241,25 @@
         });
     }
 
-    window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+    function onScrollUpdateNav() {
+        if (navTicking) {
+            return;
+        }
+        navTicking = true;
+        window.requestAnimationFrame(() => {
+            updateActiveNavLink();
+            navTicking = false;
+        });
+    }
+
+    window.addEventListener('scroll', onScrollUpdateNav, { passive: true });
     window.addEventListener('load', updateActiveNavLink);
 </script>
 <script>
     const revealTargets = [
         '#about .sub-title', '#about .about-col-1', '#about .about-col-2',
         '#services .sub-title', '#services .services-list > div',
-        '#portfolio .sub-title', '#portfolio .work-list .work', '#portfolio .btn',
+        '#portfolio .sub-title', '#portfolio .work-list .work',
         '#contact .sub-title', '#contact .contact-left', '#contact .contact-right'
     ];
 
