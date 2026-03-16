@@ -56,7 +56,11 @@
                 <li><a href="#contact">Contact</a></li>
                 <button type="button" class="menu-close" onclick="closemenu()" aria-label="Close menu">✕</button>
             </ul>
-            <button type="button" class="menu-toggle" onclick="openmenu()" aria-label="Open menu">☰</button>
+            <button type="button" class="menu-toggle" onclick="openmenu()" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
         <div class="header-text">
             <p>WEBSITE DEVELOPER</p>
@@ -227,7 +231,7 @@
         sidemeu.style.right = "0";
     }
     function closemenu(){
-        sidemeu.style.right = "-280px";
+        sidemeu.style.right = "-340px";
     }
 
 </script>
