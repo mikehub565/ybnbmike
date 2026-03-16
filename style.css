@@ -150,6 +150,35 @@ nav ul li a.active-nav-link::after {
     min-width: 0;
 }
 
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.hero-btn {
+    margin: 0;
+}
+
+.hero-btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border-color: rgba(37, 211, 102, 0.55);
+    color: #dfffe9;
+}
+
+.hero-btn-whatsapp i {
+    font-size: 18px;
+}
+
+.hero-btn-whatsapp:hover {
+    background: #25d366;
+    border-color: #25d366;
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.28);
+}
+
 .hero-image-wrap {
     flex: 0 0 auto;
 }
@@ -749,6 +778,19 @@ form .btn2 {
     .hero-image {
         width: 100%;
         height: 260px;
+    }
+
+    .hero-actions {
+        gap: 12px;
+        margin-top: 22px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding-left: 24px;
+        padding-right: 24px;
     }
 
     .header-text h1 {
