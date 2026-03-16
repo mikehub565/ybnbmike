@@ -884,6 +884,23 @@ form .btn2 {
         gap: 16px;
     }
 
+    .work {
+        background: #111;
+    }
+
+    .work:hover img {
+        transform: none;
+    }
+
+    .layer {
+        position: static;
+        height: auto;
+        min-height: 0;
+        padding: 20px;
+        border-radius: 0 0 16px 16px;
+        background: linear-gradient(180deg, rgba(18, 18, 18, 0.92), rgba(255, 0, 79, 0.92));
+    }
+
     .services-list div {
         padding: 28px 24px;
     }
