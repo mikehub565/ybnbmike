@@ -9,7 +9,7 @@
     <!-- Preconnect and load Poppins font for better CLS and performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Favicons and touch icon (generated from your uploaded photo) -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -18,8 +18,8 @@
     <link rel="icon" href="/favicon-32x32.png">
     <link rel="shortcut icon" href="/favicon.ico">
     <meta name="theme-color" content="#ff004f">
-    <!-- defer Font Awesome to avoid blocking render -->
-    <script defer src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome 6 Free CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
         <!-- SEO: meta description, canonical, Open Graph, Twitter Card, JSON-LD -->
         <meta name="description" content="Michael (YBNBMIKE) — Website developer from Kenya. I build responsive websites, UI/UX designs and web apps. Contact: chegemichael974@gmail.com">
         <meta name="keywords" content="website developer, web design, UI/UX, web developer Kenya, portfolio">
@@ -57,11 +57,14 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <div class="header-text">
-            <p>WEBSITE DEVELOPER</p>
-            <h1>Hi, I'm <span>MICHAEL</span><br>From Kenya</h1>
+        <div class="header-content">
+            <div class="header-text">
+                <p>WEBSITE DEVELOPER</p>
+                <h1>Hi, I'm <span>MICHAEL</span><br>From Kenya</h1>
+                <a href="#contact" class="btn btn2" style="display:inline-block;margin-top:28px;">Hire Me</a>
+            </div>
             <div class="hero-image-wrap">
-                <img src="profile_new.jpg?v=2" alt="Michael hero" class="hero-image" loading="lazy" style="max-width:100%;width:340px;max-height:380px;border-radius:18px;margin:24px auto 0;display:block;object-fit:cover;box-shadow:0 8px 32px rgba(0,0,0,0.28);border:2px solid rgba(255,255,255,0.08);background:#222;" />
+                <img src="profile_new.jpg?v=2" alt="Michael Mwangi" class="hero-image" loading="eager" />
             </div>
         </div>
     </div>
@@ -75,7 +78,7 @@
             </div>
             <div class="about-col-2">
                 <h2 class="sub-title">About Me</h2>
-                <p>My name is Michael Mwangi a computer science student at MountKenya University,Thika.</p>
+                <p>I'm Michael Mwangi, a Computer Science student at MountKenya University, Thika, and a passionate website developer. I build clean, responsive, and user-friendly websites that help individuals and businesses stand out online. Available for freelance projects and open to collaboration.</p>
 
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
@@ -119,14 +122,14 @@
                 <p>I specialize in creating visually stunning, responsive, and user-friendly websites that leave a lasting impression. My web design services focus on blending aesthetics with functionality to ensure your site not only looks amazing but also performs seamlessly across all devices. Whether you need a personal blog, a portfolio, or a full-scale business website, I tailor each design to meet your unique goals and brand identity..</p>
             </div>
             <div>
-                <i class="fas fa-crop-alt"></i>
+                <i class="fas fa-crop-simple"></i>
                 <h2>UI/UX Design</h2>
                 <p>User experience is at the heart of everything I design. My UI/UX design services focus on understanding your users' needs to create intuitive, engaging, and efficient digital interfaces.</p>
             </div>
             <div>
                 <i class="fab fa-app-store"></i>
                 <h2>App Design</h2>
-                <p>From concept to creation, I bring your app ideas to life with visually appealing designs.</p>
+                <p>From concept to creation, I bring your app ideas to life with clean, intuitive, and visually appealing designs that work seamlessly across all platforms and screen sizes.</p>
             </div>
         </div>
     </div>
@@ -176,14 +179,14 @@
             <div class="contact-left">
                 <h2 class="sub-title">Contact Me</h2>
                 <p><i class="fas fa-paper-plane"></i> chegemichael974@gmail.com</p>
-                <p><i class="fas fa-phone-square-alt"></i> 0745872280</p>
+                <p><i class="fas fa-square-phone"></i> 0745872280</p>
                 <div class="social-icons">
-                    <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
-                    <a href=""><i class="fab fa-twitter-square"></i></a>
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="fab fa-linkedin"></i></a>
+                    <a href="https://facebook.com/" target="_blank" rel="noopener"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
                 </div>
-                <a href="my cv..pdf" download class="btn btn2">Download CV</a>
+                <a href="my cv.pdf" download class="btn btn2">Download CV</a>
             </div>
                 <div class="contact-right">
                     <form name="submit-to-google-sheet">
