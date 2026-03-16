@@ -226,13 +226,25 @@
 <script>
 
     var sidemeu = document.getElementById("sidemenu");
+    var menuToggleButton = document.querySelector(".menu-toggle");
+    var menuLinks = sidemeu.querySelectorAll("a[href^='#']");
 
     function openmenu(){
         sidemeu.style.right = "0";
+        if (menuToggleButton) {
+            menuToggleButton.setAttribute("aria-expanded", "true");
+        }
     }
     function closemenu(){
         sidemeu.style.right = "-340px";
+        if (menuToggleButton) {
+            menuToggleButton.setAttribute("aria-expanded", "false");
+        }
     }
+
+    menuLinks.forEach(function(link) {
+        link.addEventListener("click", closemenu);
+    });
 
 </script>
 <script>
