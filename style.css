@@ -484,6 +484,13 @@ nav ul li a.active-nav-link::after {
     transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.project-logo-fit {
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: #ffffff;
+    padding: 18px;
+}
+
 .work:hover img {
     transform: scale(1.1);
 }
