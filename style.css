@@ -159,9 +159,10 @@ nav ul li a.active-nav-link::after {
 }
 
 .header-text h1 span {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 1.2px;
-    font-weight: 400;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1.8px;
+    font-weight: 700;
+    text-transform: uppercase;
     color: #ff004f;
     position: relative;
 }
@@ -672,8 +673,10 @@ form .btn2 {
 
     /* Nav */
     nav {
-        width: calc(100% - 40px);
-        padding: 10px 0;
+        width: 100%;
+        left: 0;
+        transform: none;
+        padding: 10px 12px;
     }
 
     nav ul {
