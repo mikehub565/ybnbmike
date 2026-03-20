@@ -212,7 +212,7 @@ nav ul li a.active-nav-link::after {
 }
 
 .header-text h1 span {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Arial Black', sans-serif;
     letter-spacing: 1.8px;
     font-weight: 700;
     text-transform: uppercase;
