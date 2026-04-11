@@ -11,27 +11,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Favicons and touch icon (generated from your uploaded photo) -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" href="/favicon-32x32.png">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Favicons and touch icon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <meta name="theme-color" content="#ff004f">
     <!-- Font Awesome 6 Free CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous"></noscript>
         <!-- SEO: meta description, canonical, Open Graph, Twitter Card, JSON-LD -->
-        <meta name="description" content="I'm Michael Mwangi, an Information Technology student at MountKenya University, Thika, and a passionate developer. I build clean, responsive, and user-friendly websites for individuals and businesses.">
-        <meta name="keywords" content="website developer, web design, UI/UX, web developer Kenya, portfolio">
+        <meta name="description" content="Michael Mwangi (YNBMIKE) is a software developer, web designer, and creator of FindMyNganya — a real-time matatu tracking and commuter community platform for Nairobi.">
+        <meta name="keywords" content="Michael Mwangi, YNBMIKE, FindMyNganya, software developer Kenya, website developer, web design, UI/UX, portfolio">
         <link rel="canonical" href="https://ynbmike.me/">
         <meta property="og:title" content="Michael (YBNBMIKE) — Developer | Kenya">
-        <meta property="og:description" content="I'm Michael Mwangi, an Information Technology student and passionate developer building clean, responsive, and user-friendly websites.">
+        <meta property="og:description" content="Michael Mwangi (YNBMIKE) is a software developer, web designer, and creator of FindMyNganya — a real-time matatu platform for Nairobi.">
         <meta property="og:type" content="website">
         <meta property="og:url" content="https://ynbmike.me/">
         <meta property="og:image" content="https://ynbmike.me/portfolio3.jpg">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="Michael (YBNBMIKE) — Developer | Kenya">
-        <meta name="twitter:description" content="I'm Michael Mwangi, an Information Technology student and passionate developer building clean, responsive, and user-friendly websites.">
+        <meta name="twitter:description" content="Michael Mwangi (YNBMIKE) is a software developer, web designer, and creator of FindMyNganya — a real-time matatu platform for Nairobi.">
         <meta name="twitter:image" content="https://ynbmike.me/portfolio3.jpg">
         <script type="application/ld+json">
         {
@@ -40,7 +40,8 @@
             "name": "Michael (YBNBMIKE)",
             "url": "https://ynbmike.me/",
             "email": "chegemichael974@gmail.com",
-            "jobTitle": "Developer",
+            "jobTitle": "Software Developer",
+            "description": "Software developer, web designer, and creator of FindMyNganya — a real-time matatu tracking and commuter community platform for Nairobi.",
             "sameAs": ["https://www.instagram.com/ybnbmike/","https://www.tiktok.com/@ybnbmike"]
         }
         </script>
@@ -80,20 +81,38 @@
             </div>
             <div class="about-col-2">
                 <h2 class="sub-title">About Me</h2>
-                <p>I'm Michael Mwangi, a Information Technology student at MountKenya University, Thika, and a passionate developer. I build clean, responsive, and user-friendly websites that help individuals and businesses stand out online. Available for freelance projects and open to collaboration.</p>
+                <p>I'm Michael Mwangi (YNBMIKE), an Information Technology student at Mount Kenya University, Thika, a software developer, and the creator of FindMyNganya — a real-time matatu tracking and commuter community platform for Nairobi. I also build clean, responsive, and user-friendly websites that help individuals and businesses stand out online. Available for freelance projects and open to collaboration.</p>
 
-                <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab(event, 'education')">Education</p>
+                <div class="tab-titles" role="tablist" aria-label="About tabs">
+                    <button
+                        type="button"
+                        id="tab-skills"
+                        class="tab-links active-link"
+                        role="tab"
+                        aria-controls="skills"
+                        aria-selected="true"
+                        tabindex="0"
+                        onclick="opentab(event, 'skills')"
+                    >Skills</button>
+                    <button
+                        type="button"
+                        id="tab-education"
+                        class="tab-links"
+                        role="tab"
+                        aria-controls="education"
+                        aria-selected="false"
+                        tabindex="-1"
+                        onclick="opentab(event, 'education')"
+                    >Education</button>
                 </div>
-                <div class="tab-contents active-tab" id="skills">
+                <div class="tab-contents active-tab" id="skills" role="tabpanel" aria-labelledby="tab-skills" tabindex="0">
                     <ul>
                         <li><span>UI/UX</span><br>Designing Web/App interfaces</li>
                         <li><span>Web Development</span><br>Web app Development</li>
                         <li><span>App Development</span><br>Building websites</li>
                     </ul>
                 </div>
-                <div class="tab-contents" id="education">
+                <div class="tab-contents" id="education" role="tabpanel" aria-labelledby="tab-education" tabindex="0" hidden>
                     <ul>
                         <li><span>2023 - Current</span><br>MountKenya University</li>
                         <li><span>2018 - 2022</span><br>Magumu Boys</li>
@@ -112,7 +131,7 @@
             <div>
                 <i class="fas fa-code"></i>
                 <h2>Web Design</h2>
-                <p>I specialize in creating visually stunning, responsive, and user-friendly websites that leave a lasting impression. My web design services focus on blending aesthetics with functionality to ensure your site not only looks amazing but also performs seamlessly across all devices. Whether you need a personal blog, a portfolio, or a full-scale business website, I tailor each design to meet your unique goals and brand identity..</p>
+                <p>I specialize in creating visually stunning, responsive, and user-friendly websites that leave a lasting impression. My web design services blend aesthetics with functionality so your site looks great and performs smoothly across all devices. Whether you need a personal blog, a portfolio, or a business website, I tailor each design to your goals and brand.</p>
             </div>
             <div>
                 <i class="fas fa-crop-simple"></i>
@@ -148,17 +167,16 @@
                 </picture>
                 <div class="layer">
                     <h3>Parking system</h3>
-                    <p>The website Maximizes the use of parking areas, even in limited spaces, by organizing vehicle placement. .</p>
+                    <p>This system maximizes parking space usage by organizing vehicle placement, even in limited areas.</p>
                 </div>
             </div>
             <div class="work">
-                <picture>
-                    <source type="image/webp" srcset="portfolio5_400.webp 400w, portfolio5_800.webp 800w, portfolio5_1200.webp 1200w" sizes="(max-width:600px) 100vw, 400px">
-                    <img src="portfolio5_800.jpg" srcset="portfolio5_400.jpg 400w, portfolio5_800.jpg 800w, portfolio5_1200.jpg 1200w" sizes="(max-width:600px) 100vw, 400px" loading="lazy" alt="Room management system screenshot">
-                </picture>
+                <img src="https://findmynganya.app/image/hero.png" loading="lazy" alt="FindMyNganya project preview" class="project-logo-fit">
                 <div class="layer">
-                    <h3>Room management system</h3>
-                    <p>The websites Streamlines property management by consolidating tenant information, payment records, and maintenance requests.</p>
+                    <span class="project-badge">Transport Tech</span>
+                    <h3>FindMyNganya</h3>
+                    <p>A real-time matatu tracking and commuter community platform for Nairobi, built to help users discover fleets, follow live movement, and stay connected.</p>
+                    <a href="https://findmynganya.app/" target="_blank" rel="noopener" class="project-link">View Website</a>
                 </div>
             </div>
         </div>
@@ -181,13 +199,39 @@
                 <a href="Michel%20mwangi%20CV.pdf" download class="btn btn2">Download CV</a>
             </div>
                 <div class="contact-right">
+                    <aside class="trust-card" aria-label="Client testimonial">
+                        <p class="trust-quote">"Michael redesigned our clothing brand site and we started getting more inquiries within days. Clean design, fast pages, and great communication."</p>
+                        <p class="trust-author">- Clothing Brand Owner</p>
+                        <div class="trust-metrics" aria-label="Trust metrics">
+                            <span><strong>5+</strong> Projects completed</span>
+                            <span><strong>24h</strong> Average first response</span>
+                        </div>
+                    </aside>
+                    <div class="value-points" aria-label="What you get">
+                        <div class="value-points-title">What you get</div>
+                        <ul class="value-points-list">
+                            <li><i class="fa-solid fa-bolt" aria-hidden="true"></i> Fast delivery</li>
+                            <li><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Mobile-first design</li>
+                            <li><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i> Free revisions</li>
+                        </ul>
+                    </div>
                     <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <label class="sr-only" for="contact-name">Your Name</label>
+                        <input id="contact-name" type="text" name="Name" placeholder="Your Name" autocomplete="name" required>
+
+                        <label class="sr-only" for="contact-email">Your Email</label>
+                        <input id="contact-email" type="email" name="Email" placeholder="Your Email" autocomplete="email" required>
+
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="contact-company">Company</label>
+                            <input id="contact-company" type="text" name="Company" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <label class="sr-only" for="contact-message">Your Message</label>
+                        <textarea id="contact-message" name="Message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
-                    <span id="msg"></span>
+                    <span id="msg" role="status" aria-live="polite" aria-atomic="true"></span>
                 </div>
         </div>
     </div>
@@ -197,19 +241,58 @@
 
 <script>
 
-    const tablinks = document.getElementsByClassName("tab-links");
-    const tabcontents = document.getElementsByClassName("tab-contents");
+    const tablinks = document.querySelectorAll('.tab-links[role="tab"]');
+    const tabcontents = document.querySelectorAll('.tab-contents[role="tabpanel"]');
 
     function opentab(evt, tabname){
-        for (const tablink of tablinks){
-            tablink.classList.remove("active-link");
+        for (const tablink of tablinks) {
+            tablink.classList.remove('active-link');
+            tablink.setAttribute('aria-selected', 'false');
+            tablink.tabIndex = -1;
         }
-        for (const tabcontent of tabcontents){
-            tabcontent.classList.remove("active-tab");
+        for (const tabcontent of tabcontents) {
+            tabcontent.classList.remove('active-tab');
+            tabcontent.hidden = true;
         }
-        evt.currentTarget.classList.add("active-link");
-        document.getElementById(tabname).classList.add("active-tab");
+
+        const activeTab = evt.currentTarget;
+        activeTab.classList.add('active-link');
+        activeTab.setAttribute('aria-selected', 'true');
+        activeTab.tabIndex = 0;
+
+        const activePanel = document.getElementById(tabname);
+        if (activePanel) {
+            activePanel.classList.add('active-tab');
+            activePanel.hidden = false;
+        }
     }
+
+    function focusTabByIndex(nextIndex) {
+        const tabs = Array.from(tablinks);
+        const clamped = ((nextIndex % tabs.length) + tabs.length) % tabs.length;
+        const nextTab = tabs[clamped];
+        if (!nextTab) return;
+        nextTab.focus();
+        const controlsId = nextTab.getAttribute('aria-controls');
+        if (controlsId) {
+            opentab({ currentTarget: nextTab }, controlsId);
+        }
+    }
+
+    tablinks.forEach((tab, index) => {
+        tab.addEventListener('keydown', (e) => {
+            const key = e.key;
+            if (key === 'ArrowRight' || key === 'ArrowLeft' || key === 'Home' || key === 'End') {
+                e.preventDefault();
+            } else {
+                return;
+            }
+            if (key === 'ArrowRight') focusTabByIndex(index + 1);
+            if (key === 'ArrowLeft') focusTabByIndex(index - 1);
+            if (key === 'Home') focusTabByIndex(0);
+            if (key === 'End') focusTabByIndex(tablinks.length - 1);
+        });
+    });
 
 </script>
 
@@ -286,19 +369,91 @@
 <script>
     const form = document.forms['submit-to-google-sheet']
     const msg = document.getElementById('msg')
+    const submitBtn = form?.querySelector('button[type="submit"]')
+
+    // Set this to your deployed Worker endpoint (recommended).
+    // Example: "https://your-worker.your-subdomain.workers.dev/"
+    const WORKER_ENDPOINT = ''
+
+    function setStatus(text, type) {
+        msg.textContent = text
+        msg.style.color = type === 'error' ? '#f87171' : '#4ade80'
+        msg.classList.add('show')
+    }
 
     form.addEventListener('submit', async e => {
         e.preventDefault()
         const name = form.Name.value.trim()
         const email = form.Email.value.trim()
         const message = form.Message.value.trim()
-        const subject = encodeURIComponent(`Portfolio message from ${name || 'Visitor'}`)
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)
+        const company = (form.Company?.value || '').trim()
 
-        window.location.href = `mailto:chegemichael974@gmail.com?subject=${subject}&body=${body}`
-        msg.textContent = 'Opening your email app...'
-        setTimeout(()=> msg.textContent = '', 5000)
+        if (submitBtn) submitBtn.disabled = true
+        setStatus('Sending...', 'success')
+
+        try {
+            if (!WORKER_ENDPOINT) {
+                setStatus('Contact form not configured yet', 'error')
+                return
+            }
+
+            // Honeypot: bots often fill hidden fields. Pretend success to avoid retries.
+            if (company) {
+                setStatus('Message sent', 'success')
+                form.reset()
+                return
+            }
+
+            const resp = await fetch(WORKER_ENDPOINT, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ Name: name, Email: email, Message: message, Company: company })
+            })
+            if (!resp.ok) {
+                throw new Error(`Request failed (${resp.status})`)
+            }
+            setStatus('Message sent', 'success')
+            form.reset()
+        } catch (err) {
+            setStatus('Could not send, try again', 'error')
+        } finally {
+            if (submitBtn) submitBtn.disabled = false
+            setTimeout(() => {
+                msg.textContent = ''
+                msg.classList.remove('show')
+            }, 6000)
+        }
     })
+</script>
+
+<!-- Analytics (Plausible) -->
+<script defer data-domain="ynbmike.me" src="https://plausible.io/js/script.js"></script>
+
+<script>
+    // Portfolio micro-interaction: subtle tilt on desktop hover
+    const tiltCards = Array.from(document.querySelectorAll('#portfolio .work'));
+    const canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    if (canHover && tiltCards.length) {
+        tiltCards.forEach(card => {
+            card.classList.add('work-tilt');
+
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width;  // 0..1
+                const y = (e.clientY - rect.top) / rect.height;  // 0..1
+                const rotY = (x - 0.5) * 6;  // -3..3 deg
+                const rotX = (0.5 - y) * 6;  // -3..3 deg
+                card.style.setProperty('--rx', `${rotX.toFixed(2)}deg`);
+                card.style.setProperty('--ry', `${rotY.toFixed(2)}deg`);
+            }, { passive: true });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.setProperty('--rx', '0deg');
+                card.style.setProperty('--ry', '0deg');
+            });
+        });
+    }
 </script>
 </body>
 </html>
